@@ -7,7 +7,7 @@ PORT = 8443
 
 def run_server():
     context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
-    context.load_cert_chain(certfile="cert.pem", keyfile="key.pem")
+    context.load_cert_chain(certfile="cert_&_key/cert.pem", keyfile="cert_&_key/key.pem")
 
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM, 0) as sock:
         sock.bind((HOST, PORT))

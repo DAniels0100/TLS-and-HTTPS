@@ -8,7 +8,7 @@ from datetime import datetime, timedelta, timezone
 key = rsa.generate_private_key(public_exponent=65537, key_size=4096)
 
 # se guarda la llave creada en el archivo key.pem
-with open("key.pem", "wb") as file:
+with open("cert_&_key/key.pem", "wb") as file:
     file.write(key.private_bytes(
         encoding=serialization.Encoding.PEM,
         format=serialization.PrivateFormat.TraditionalOpenSSL,
@@ -30,7 +30,7 @@ cert = (
 )
 
 # guardar el certidicado en el archivo cert.pem
-with open("cert.pem", "wb") as f:
+with open("cert_&_key/cert.pem", "wb") as f:
     f.write(cert.public_bytes(serialization.Encoding.PEM))
 
 print("Se ha creado el certificado y llave privada")
